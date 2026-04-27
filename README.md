@@ -148,3 +148,5 @@
 不安な点：複数のタグで絞り込む実装がうまくできるか不安
 
 FigmaURL: https://www.figma.com/design/QwkhbHKzygYgSrBRGOqfJ1/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%E4%BD%9C%E6%88%90?node-id=0-1&p=f&t=quTMOrNKeOrNIjF2-0
+
+ER図: https://app.diagrams.net/#G1XPJWqstFfw4ZONJrgP-tTCLRwRkd3y_N#%7B%22pageId%22%3A%22ZTJpqxGzQrN0hIwOVIRv%22%7D
