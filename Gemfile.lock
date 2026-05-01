@@ -331,7 +331,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
-  error_highlight (>= 0.4.0)
+  error_highlight (>= 0.7.0)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
