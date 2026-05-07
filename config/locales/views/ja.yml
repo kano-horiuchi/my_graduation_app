@@ -1,0 +1,45 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+      submit: "保存する"
+    label:
+      email: "メールアドレス"
+      password: "パスワード"
+  activerecord:
+    models:
+      board: "記録"
+    attributes:
+      board:
+        title: "銘柄名"
+        body: "感想"
+      user:
+        name: "ユーザー名"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+  users:
+    new:
+      title: "ユーザー登録"
+      to_login_page: "ログインページへ"
+  defaults:
+    app_name: "お気に入りの日本酒を見つけよう！"
+    message:
+      not_logged_in: "ログインしてください"
+    header:
+      login: "ログイン"
+      logout: "ログアウト"
+      boards: "日本酒を探す"
+  boards:
+    index:
+      title: "日本酒記録一覧"
+      no_result: "記録がまだありません"
+    board:
+      show_detail: "詳細を見る"
