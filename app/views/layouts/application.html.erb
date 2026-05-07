@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>お気に入りの日本酒を見つけよう！</title>
+    <title><%= t('defaults.app_name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,7 @@
       <%= render 'static_pages/before_login_header' %>
     <% end %>
     <% flash.each do |message_type, message| %>
-      <div class="alert alert-info">
+      <div class="alert alert-<%= message_type == 'notice' ? 'success' : 'danger' %>">
         <%= message %>
       </div>
     <% end %>

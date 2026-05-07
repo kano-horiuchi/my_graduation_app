@@ -4,8 +4,12 @@
       <%= image_tag "log.png", height: "80" %>
     <% end %>
     <ul class="nav">
-      <li class="nav-item"><%= link_to '新規登録', new_user_path, class: 'nav-link', data: { turbo: false } %></li>
-      <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link', data: { turbo: false } %></li>
+      <li class="nav-item">
+        <%= link_to t('users.new.title'), new_user_path, class: 'nav-link text-dark text-decoration-none', data: { turbo: false } %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('defaults.header.login'), login_path, class: 'nav-link text-dark text-decoration-none', data: { turbo: false } %>
+      </li>
     </ul>
   </nav>
 </header>

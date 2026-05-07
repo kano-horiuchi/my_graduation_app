@@ -5,7 +5,7 @@
     <% end %>
     <ul class="nav">
       <li class="nav-item">
-        <%= button_to "ログアウト", logout_path, method: :delete, data: { turbo: false }, class: "dropdown-item" %>
+        <%= button_to t('defaults.header.logout'), logout_path, method: :delete, data: { turbo: false }, class: "dropdown-item" %>
       </li>
     </ul>
   </nav>
