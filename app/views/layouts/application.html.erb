@@ -10,7 +10,16 @@
   </head>
 
   <body>
-    <%= render 'static_pages/header' %>
+    <% if logged_in? %>
+      <%= render 'static_pages/header' %>
+    <% else %>
+      <%= render 'static_pages/before_login_header' %>
+    <% end %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-info">
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield %>
     <%= render 'static_pages/footer' %>
   </body>
