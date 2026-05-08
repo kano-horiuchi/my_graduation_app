@@ -20,7 +20,10 @@
               <td><%= current_user.email %></td>
             </tr>
           </tbody>
-        <table>
+        </table>
+      </div>
+      <div class="text-end mb-3">
+        <%= link_to t('profiles.edit.title'), edit_profile_path, class: "btn btn-outline-secondary btn-sm" %>
       </div>
       <h2 class="text-center mt-5 mb-4 border-bottom pb-2">
         <%= t('mypages.show.sub_title') %>
