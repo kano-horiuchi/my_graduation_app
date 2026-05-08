@@ -1,8 +1,8 @@
 <div class="top-wrapper">
   <div class="top-inner-text">
-    <h1>お気に入りの日本酒を見つけよう！</h1>
+    <h1><%= t('defaults.app_name') %></h1>
     <div class="mt-4">
-    <%= link_to '日本酒の投稿を見る', boards_path, class: 'btn btn-outline-light rounded-0 px-4 py-3 fw-bold' %>
+    <%= link_to t('defaults.top.view_boards'), boards_path, class: 'btn btn-outline-light rounded-0 px-4 py-3 fw-bold' %>
     </div>
   </div>
 </div>

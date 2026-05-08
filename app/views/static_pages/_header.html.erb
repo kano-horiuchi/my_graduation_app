@@ -3,9 +3,15 @@
     <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag 'log.png', height: '80' %>
     <% end %>
-    <ul class="nav">
+    <ul class="nav align-items-center">
       <li class="nav-item">
-        <%= button_to t('defaults.header.logout'), logout_path, method: :delete, data: { turbo: false }, class: "dropdown-item" %>
+        <%= link_to t('defaults.header.boards'), boards_path, class: 'nav-link text-dark text-decoration-none' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('defaults.header.mypage'), mypage_path, class: 'nav-link text-dark text-decoration-none' %>
+      </li>
+      <li class="nav-item">
+        <%= button_to t('defaults.header.logout'), logout_path, method: :delete, data: { turbo: false }, class: "nav-link btn btn-link text-dark text-decoration-none border-0 pb-2" %>
       </li>
     </ul>
   </nav>

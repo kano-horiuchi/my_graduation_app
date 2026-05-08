@@ -21,14 +21,20 @@ ja:
         title: "銘柄名"
         body: "感想"
       user:
-        name: "ユーザー名"
+        name: "ニックネーム"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
   users:
     new:
       title: "ユーザー登録"
+      submit: "登録"
       to_login_page: "ログインページへ"
+  mypages:
+    show:
+      title: "マイページ"
+      sub_title: "自分の日本酒記録"
+      no_result: "まだ日本酒の記録がありません"
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
     message:
@@ -37,6 +43,10 @@ ja:
       login: "ログイン"
       logout: "ログアウト"
       boards: "日本酒を探す"
+      mypage: "マイページ"
+      boards: "日本酒一覧"
+    top:
+      view_boards: "日本酒の投稿を見る"
   boards:
     index:
       title: "日本酒記録一覧"
