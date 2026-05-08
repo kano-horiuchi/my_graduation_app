@@ -16,8 +16,10 @@
       <%= render 'static_pages/before_login_header' %>
     <% end %>
     <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type == 'notice' ? 'success' : 'danger' %>">
+      <% alert_class = case message_type.to_s when 'success', 'notice' then 'success' else 'danger' end %>
+      <div class="alert alert-<%= alert_class %> alert-dismissible fade show" role="alert">
         <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     <% end %>
     <%= yield %>

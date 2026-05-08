@@ -35,6 +35,12 @@ ja:
       title: "マイページ"
       sub_title: "自分の日本酒記録"
       no_result: "まだ日本酒の記録がありません"
+  profiles:
+    edit:
+      title: "プロフィール編集"
+    update:
+      success: "プロフィールを更新しました"
+      fail: "プロフィールの更新に失敗しました"
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
     message:
@@ -47,6 +53,7 @@ ja:
       boards: "日本酒一覧"
     top:
       view_boards: "日本酒の投稿を見る"
+    submit: "更新する"
   boards:
     index:
       title: "日本酒記録一覧"
