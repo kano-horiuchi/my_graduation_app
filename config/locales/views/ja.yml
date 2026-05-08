@@ -15,16 +15,28 @@ ja:
       password: "パスワード"
   activerecord:
     models:
-      board: "記録"
+      board: "日本酒記録"
+      tag: "味わいタグ"
     attributes:
       board:
         title: "銘柄名"
-        body: "感想"
+        body: "メモ"
+        tag_ids: "味わいタグ"
+      tag:
+        name: "タグ名"
       user:
         name: "ニックネーム"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
+    errors:
+      models:
+        board:
+          attributes:
+            tag_ids:
+              blank: "を1つ以上選択してください"
+            title:
+              blank: "を入力してください"
   users:
     new:
       title: "ユーザー登録"
@@ -40,7 +52,7 @@ ja:
       title: "プロフィール編集"
     update:
       success: "プロフィールを更新しました"
-      fail: "プロフィールの更新に失敗しました"
+      fail: "プロフィールを更新できませんでした"
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
     message:
@@ -55,8 +67,15 @@ ja:
       view_boards: "日本酒の投稿を見る"
     submit: "更新する"
   boards:
+    new:
+      title: "日本酒を記録する"
+    create:
+      submit: "記録する"
+      success: "日本酒を記録しました"
+      fail: "記録できませんでした"
     index:
       title: "日本酒記録一覧"
+      new_board: "新しく記録する"
       no_result: "記録がまだありません"
     board:
       show_detail: "詳細を見る"

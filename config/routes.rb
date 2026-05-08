@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "profiles/update"
   root "static_pages#top"
   resources :users, only: %i[new create]
-  resources :boards, only: %i[index]
+  resources :boards, only: %i[index new create show edit update]
   resource :mypage, only: %i[show], controller: "mypages"
   resource :profile, only: %i[show edit update]
   get "login", to: "user_sessions#new"
