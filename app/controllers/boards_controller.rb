@@ -37,13 +37,18 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    @board = current_user.boards.find(params[:id])
     @board.destroy!
-    redirect_to boards_path, success: t("defaults.massage.deletsd"), status: :see_other
+    redirect_to boards_path, success: t("defaults.message.deleted"), status: :see_other
   end
 
   private
 
   def set_my_board
     @board = current_user.boards.find(params[:id])
+  end
+
+  def board_params
+    params.require(:board).permit(:title, :body, tag_ids: [])
   end
 end
