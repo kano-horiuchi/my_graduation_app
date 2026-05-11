@@ -67,7 +67,10 @@ ja:
       boards: "日本酒一覧"
     top:
       view_boards: "日本酒の投稿を見る"
-    submit: "編集する"
+    submit: "更新"
+    update:
+      success: "投稿を更新しました"
+      submit: "編集する"
     destroy: "削除"
   boards:
     new:
@@ -79,6 +82,8 @@ ja:
     update:
       success: "記録を更新しました"
       fail: "更新できませんでした"
+    edit:
+      title: "記録の編集"
     index:
       title: "日本酒記録一覧"
       new_board: "新しく記録する"
