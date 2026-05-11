@@ -57,6 +57,8 @@ ja:
     app_name: "お気に入りの日本酒を見つけよう！"
     message:
       not_logged_in: "ログインしてください"
+      deleted: "記録を削除しました"
+      delete_confirm: "本当に削除しますか？"
     header:
       login: "ログイン"
       logout: "ログアウト"
@@ -65,7 +67,8 @@ ja:
       boards: "日本酒一覧"
     top:
       view_boards: "日本酒の投稿を見る"
-    submit: "更新する"
+    submit: "編集する"
+    destroy: "削除"
   boards:
     new:
       title: "日本酒を記録する"
@@ -73,9 +76,18 @@ ja:
       submit: "記録する"
       success: "日本酒を記録しました"
       fail: "記録できませんでした"
+    update:
+      success: "記録を更新しました"
+      fail: "更新できませんでした"
     index:
       title: "日本酒記録一覧"
       new_board: "新しく記録する"
       no_result: "記録がまだありません"
+    show:
+      title: "記録の詳細"
     board:
       show_detail: "詳細を見る"
+  time:
+    formats:
+      default: "%Y/%m/ %d"
+      long: "%Y年%m月%d日"
