@@ -1,5 +1,7 @@
 class BoardsController < ApplicationController
   skip_before_action :require_login, only: %i[index]
+  before_action :set_my_board, only: %i[edit update destroy]
+
   def index
     @boards = Board.all.includes(:user).order(created_at: :desc)
   end
@@ -9,13 +11,11 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:id])
   end
 
   def update
-    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
-      redirect_to board_path(@board), success: t("defaults.message.updated")
+      redirect_to board_path(@board), success: t("defaults.update.success")
     else
       flash.now[:danger] = t("defaults.message.not_updated")
       render :edit, status: :unprocessable_entity
@@ -36,9 +36,14 @@ class BoardsController < ApplicationController
     end
   end
 
+  def destroy
+    @board.destroy!
+    redirect_to boards_path, success: t("defaults.massage.deletsd"), status: :see_other
+  end
+
   private
 
-  def board_params
-    params.require(:board).permit(:title, :body, tag_ids: [])
+  def set_my_board
+    @board = current_user.boards.find(params[:id])
   end
 end
