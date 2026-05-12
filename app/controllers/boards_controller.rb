@@ -8,6 +8,11 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    Rails.logger.info "=== Board Image Debug ==="
+    Rails.logger.info "Board ID: #{@board.id}"
+    Rails.logger.info "board_image present?: #{@board.board_image?}"
+    Rails.logger.info "board_image.url: #{@board.board_image.url if @board.board_image?}"
+    Rails.logger.info "========================="
   end
 
   def edit
