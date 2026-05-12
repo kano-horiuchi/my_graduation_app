@@ -1,19 +1,18 @@
 <div class="col-sm-12 col-lg-4 mb-3">
-  <div id="board-id-<%= board.id %>">
-    <div class="card h-100"> 
-      <%= image_tag "board_placeholder.png", class: "card-img-top", width: "300", height:"200" %>
-      <div class="card-body">
-        <div class="d-flex align-items-center">
-          <h4 class="card-title">
-            <%= link_to board.title, board_path(board), class: "text-decoration-none" %>
-          </h4>
-        </div>
-        <ul class="list-inline mb-2 text-muted small">
-          <li class="list-inline-item"><i class="bi bi-person me-1"></i><%= board.user.name %></li>
-          <li class="list-inline-item"><i class="bi bi-calendar me-1"></i><%= l board.created_at, format: :long %></li>
-        </ul>
-        <p class="card-text text-truncate"><%= board.body %></p>
-      </div>
+  <div id="board-<%= board.id %>" class="card h-100 shadow-sm">
+    <% if board.board_image? %>
+      <%= image_tag board.board_image.url, class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+    <% else %>
+      <%= image_tag 'board_placeholder.png', class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+    <% end %>
+
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= link_to board.title, board_path(board), class: "text-decoration-none text-dark" %>
+      </h5>
+      <p class="card-text text-muted">
+        <%= truncate(board.body, length: 70) %>
+      </p>
     </div>
   </div>
 </div>

@@ -22,6 +22,19 @@
         </div>
 
         <div class="mb-3">
+          <%= f.label :board_image, class: "form-label" %>
+          <% if @board.board_image? %>
+            <div class="mb-3">
+              <p class="small text-muted mb-1"><%= t('boards.edit.image') %></p>
+              <%= image_tag @board.board_image.url, class: "img-thumbnail", style: "max-width: 200px;" %>
+            </div>
+          <% end %>
+          <%= f.file_field :board_image, class: "form-control", accept: 'image/*' %>
+          <%= f.hidden_field :board_image_cache %>
+          <div class="form-text"><%= t('boards.edit.message') %></div>
+        </div>
+
+        <div class="mb-3">
           <%= f.label :body, class: "form-label" %>
           <%= f.text_area :body, class: "form-control", rows: 5 %>
         </div>

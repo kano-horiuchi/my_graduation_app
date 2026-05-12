@@ -49,6 +49,6 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.require(:board).permit(:title, :body, tag_ids: [])
+    params.require(:board).permit(:title, :body, :board_image, :board_image_cache, tag_ids: [])
   end
 end
