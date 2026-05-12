@@ -10,13 +10,15 @@ CarrierWave.configure do |config|
 
     config.fog_public = false
 
-    config.fog_credentials = {
-      provider: "aws",
-      aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-      region: "ap-northeast-1",
-      path_style: true
-    }
+    if ENV["AWS_ACCESS_KEY_ID"].present? && ENV["AWS_SECRET_ACCESS_KEY"].present?
+      config.fog_credentials = {
+        provider: "aws",
+        aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+        region: "ap-northeast-1",
+        path_style: true
+      }
+    end
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
