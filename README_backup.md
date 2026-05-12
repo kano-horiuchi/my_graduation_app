@@ -135,7 +135,7 @@
 - DB：PostgreSQL
 - デプロイ先：Render
 - 使用予定ライブラリ：
-- 画像アップロード：CarrierWave または Active Storage
+- 画像アップロード：CarrierWave
 　ページネーション：kaminari
 　認証：Sorcery
 
