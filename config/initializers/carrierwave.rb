@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_provider = "fog/aws"
-    config.fog_directory = "sakesearch-app-storage"
+    config.fog_directory = "sakesearch-app-storage-308436492263-ap-northeast-1-an"
     config.fog_credentials = {
       provider: "aws",
       aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
