@@ -1,3 +1,6 @@
+<div class="alert alert-info">
+  DEBUG: <%= @board.board_image.url.inspect %>
+</div>
 <div class="container py-5">
   <div class="row">
     <div class="col-md-8 mx-auto">
@@ -21,9 +24,9 @@
           </div>
 
           <% if @board.board_image? %>
-            <%= image_tag @board.board_image.url.to_s, class: "img-fluid mb-3" %>
+            <%= image_tag @board.board_image.url, class: "img-fluid mb-3" %>
           <% else %>
-            <%= image_tag 'board_placeholder.png', class: "img-fluid mb-3" %>
+            <div class="bg-light p-5 text-center mb-3 text-muted">No Image</div>
           <% end %>
 
           <div class="mb-4">
