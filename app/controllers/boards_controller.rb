@@ -20,7 +20,7 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to board_path(@board), success: t("defaults.update.success")
+      redirect_to board_path(@board), success: t("defaults.update.success"), status: :see_other
     else
       flash.now[:danger] = t("defaults.message.not_updated")
       render :edit, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to boards_path, flash: { success: t("boards.create.success") }
+      redirect_to boards_path, flash: { success: t("boards.create.success") }, status: :see_other
     else
       flash.now[:danger] = t("boards.create.fail")
       render :new, status: :unprocessable_entity
