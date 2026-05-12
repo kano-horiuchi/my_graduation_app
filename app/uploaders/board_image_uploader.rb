@@ -1,9 +1,5 @@
 class BoardImageUploader < CarrierWave::Uploader::Base
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
+  storage :fog
   # Include RMagick, MiniMagick, or Vips support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
