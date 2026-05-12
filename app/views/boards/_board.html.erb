@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div id="board-<%= board.id %>" class="card h-100 shadow-sm">
     <% if board.board_image? && board.board_image.url&.start_with?('http') %>
-      <%= image_tag board.board_image.url, class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+      <%= image_tag board.board_image.url.to_s, class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
     <% else %>
       <%= image_tag 'board_placeholder.png', class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
     <% end %>
