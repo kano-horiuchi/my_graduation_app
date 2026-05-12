@@ -22,6 +22,7 @@ ja:
         title: "銘柄名"
         body: "メモ"
         tag_ids: "味わいタグ"
+        board_image: "日本酒の写真"
       tag:
         name: "タグ名"
       user:
@@ -37,6 +38,9 @@ ja:
               blank: "を1つ以上選択してください"
             title:
               blank: "を入力してください"
+      messages:
+        extension_allowlist_error: "%{extension}ファイルのアップロードは許可されていません。許可されているのは %{allowed_types} です。"
+        
   users:
     new:
       title: "ユーザー登録"
@@ -84,6 +88,8 @@ ja:
       fail: "更新できませんでした"
     edit:
       title: "記録の編集"
+      image: "現在の写真"
+      message: "新しく選択すると、現在の写真が上書きされます"
     index:
       title: "日本酒記録一覧"
       new_board: "新しく記録する"

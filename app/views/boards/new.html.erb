@@ -34,6 +34,12 @@
         </div>
 
         <div class="mb-3">
+          <%= f.label :board_image, class: "form-label" %>
+          <%= f.file_field :board_image, class: "form-control", accept: 'image/*' %>
+          <%= f.hidden_field :board_image_cache %>
+        </div>
+
+        <div class="mb-3">
           <%= f.label :body, class: "form-label" %>
           <span class="text-muted small">（任意）</span>
           <%= f.text_area :body, rows: 5, class: "form-control", placeholder: "味の感想や、一緒に食べた料理などを自由に書いてみましょう！" %>
