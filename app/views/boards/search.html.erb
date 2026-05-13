@@ -1,0 +1,29 @@
+<div class="container py-5">
+  <div class="text-center mb-5"> 
+    <h2 class="mb-3"><%= t('defaults.search_page.title') %></h2>
+    <h5 class="text-secondary py-3"><%= t('defaults.search_page.submit') %></h5>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <div class="tag-selection-area my-4">
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+          <% Tag.all.each do |tag| %>
+            <div class="search-tag-item">
+              <input type="checkbox" class="btn-check" id="tag_<%= tag.id %>" autocomplete="off">
+              <label class="btn btn-outline-primary rounded-pill px-3" for="tag_<%= tag.id %>">
+                <%= tag.name %>
+              </label>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <button type="button" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm" >
+          <%= t('defaults.search') %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
