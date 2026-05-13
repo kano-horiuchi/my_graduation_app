@@ -59,16 +59,21 @@ ja:
       fail: "プロフィールを更新できませんでした"
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
+    search: "検索"
     message:
       not_logged_in: "ログインしてください"
       deleted: "記録を削除しました"
       delete_confirm: "本当に削除しますか？"
+    search_page:
+      title: "日本酒を探す"
+      submit: "味わいタグを選んで検索！"
     header:
       login: "ログイン"
       logout: "ログアウト"
       boards: "日本酒を探す"
       mypage: "マイページ"
       boards: "日本酒一覧"
+      search: "検索"
     top:
       view_boards: "日本酒の投稿を見る"
     submit: "更新"

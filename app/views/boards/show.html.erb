@@ -21,10 +21,8 @@
           </div>
 
           <% if @board.board_image? %>
-            <% Rails.logger.info "Image URL in view: #{@board.board_image_url}" %>
             <%= image_tag @board.board_image_url, class: "img-fluid mb-3" %>
           <% else %>
-            <% Rails.logger.info "No image found for board #{@board.id}" %>
             <div class="bg-light p-5 text-center mb-3 text-muted">No Image</div>
           <% end %>
 

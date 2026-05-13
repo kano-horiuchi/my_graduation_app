@@ -47,6 +47,10 @@ class BoardsController < ApplicationController
     redirect_to boards_path, success: t("defaults.message.deleted"), status: :see_other
   end
 
+  def search
+    @boards = Board.all
+  end
+
   private
 
   def set_my_board
