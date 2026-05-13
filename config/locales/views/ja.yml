@@ -60,6 +60,10 @@ ja:
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
     search: "検索"
+    serach_clear: "検索をクリア"
+    search_results:
+      zero: "条件にぴったり合う日本酒が見つかりませんでした"
+      display: "%{count} 件見つかりました"
     message:
       not_logged_in: "ログインしてください"
       deleted: "記録を削除しました"
