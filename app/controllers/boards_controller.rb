@@ -3,7 +3,12 @@ class BoardsController < ApplicationController
   before_action :set_my_board, only: %i[edit update destroy]
 
   def index
-    @boards = Board.all.includes(:user).order(created_at: :desc)
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(distinct: true)
+    if params[:q] && params[:q][:with_all_tags].present?
+      @boards = @boards.with_all_tags(params[:q][:with_all_tags])
+    end
+    @boards = @boards.includes(:user, :tags).order(created_at: :desc)
   end
 
   def show
@@ -48,7 +53,8 @@ class BoardsController < ApplicationController
   end
 
   def search
-    @boards = Board.all
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user, :tags).order(created_at: :desc)
   end
 
   private
