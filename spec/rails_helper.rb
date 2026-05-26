@@ -67,7 +67,7 @@ RSpec.configure do |config|
   # To enable this behaviour uncomment the line below.
   config.infer_spec_type_from_file_location!
   config.before(:each, type: :system) do
-    driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1000] do |driver_options|
+    driven_by :selenium, using: :headless_chrome, screen_size: [ 1400, 1000 ] do |driver_options|
       driver_options.add_argument('--headless=new')
       driver_options.add_argument('--no-sandbox')
       driver_options.add_argument('--disable-dev-shm-usage')
