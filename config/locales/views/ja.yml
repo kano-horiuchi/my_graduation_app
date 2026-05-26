@@ -81,10 +81,10 @@ ja:
     terms: "利用規約"
     privacy: "プライバシーポリシー"
     top:
-      view_boards: "日本酒の投稿を見る"
+      view_boards: "日本酒の記録を見る"
     submit: "更新"
     update:
-      success: "投稿を更新しました"
+      success: "記録を更新しました"
       submit: "編集する"
     destroy: "削除"
   boards:
