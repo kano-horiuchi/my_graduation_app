@@ -22,7 +22,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     <% end %>
-    <%= yield %>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
     <%= render 'static_pages/footer' %>
   </body>
 </html>
