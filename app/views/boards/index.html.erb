@@ -1,32 +1,28 @@
 <div class="container pt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="text-center my-4"><%= t('boards.index.title') %></h1>
+  <h1 class="text-center my-4"><%= t('boards.index.title') %></h1>
 
-      <% if params[:q].present? %>
-        <div class="text-center mb-4">
-          <p class="text-secondary mb-2"><%= t('defaults.search_results.display', count: @boards.count) %></p>
-          <%= link_to boards_path, class: "btn btn-sm btn-light rounded-pill border px-3 text-muted" do %>
-            <%= t('defaults.serach_clear') %>
-          <% end %>
-        </div>
+  <% if params[:q].present? %>
+    <div class="text-center mb-4">
+      <p class="text-secondary mb-2"><%= t('defaults.search_results.display', count: @boards.count) %></p>
+      <%= link_to boards_path, class: "btn btn-sm btn-light rounded-pill border px-3 text-muted" do %>
+        <%= t('defaults.serach_clear') %>
       <% end %>
-
-      <div class="text-center my-5">
-        <%= link_to new_board_path, class: "btn btn-outline-primary btn-lg rounded-pill px-5 shadow-sm" do %>
-          <i class="bi bi-pencil-fill me-2"></i><%= t('.new_board') %>
-        <% end %>
-      </div>
-
-      <div class="row">
-        <% if @boards.present? %>
-          <%= render @boards %>
-        <% else %>
-          <div class="text-center mb-3 text-muted py-5">
-            <%= params[:q].present? ? t('defaults.search_results.zero') : t('boards.index.no_result') %>
-          </div>
-        <% end %>
-      </div>
     </div>
+  <% end %>
+
+  <div class="text-center my-5">
+    <%= link_to new_board_path, class: "btn btn-outline-primary btn-lg rounded-pill px-5 shadow-sm" do %>
+      <i class="bi bi-pencil-fill me-2"></i><%= t('.new_board') %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% if @boards.present? %>
+      <%= render @boards %>
+    <% else %>
+      <div class="text-center mb-3 text-muted py-5">
+        <%= params[:q].present? ? t('defaults.search_results.zero') : t('boards.index.no_result') %>
+      </div>
+    <% end %>
   </div>
 </div>

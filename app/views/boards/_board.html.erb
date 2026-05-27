@@ -1,9 +1,9 @@
-<div class="col-sm-12 col-lg-4 mb-3">
+<div class="col-12 col-md-6 col-lg-4 mb-3">
   <div id="board-<%= board.id %>" class="card h-100 shadow-sm">
     <% if board.board_image? %>
-      <%= image_tag board.board_image_url, class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+      <%= image_tag board.board_image_url, class: "card-img-top img-fluid", style: "height: 200px; object-fit: cover;" %>
     <% else %>
-      <%= image_tag 'top.jpg', class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+      <%= image_tag 'top.jpg', class: "card-img-top img-fluid", style: "height: 200px; object-fit: cover;" %>
     <% end %>
 
     <div class="card-body">

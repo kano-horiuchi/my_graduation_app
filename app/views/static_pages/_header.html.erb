@@ -1,21 +1,28 @@
-<header class="bg-white border-bottom sticky-top">
-  <nav class="container-fluid d-flex align-items-center justify-content-between py-2">
+<header class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+  <nav class="container-fluid">
     <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag 'log.png', height: '80' %>
     <% end %>
-    <ul class="nav align-items-center">
-      <li class="nav-item">
-        <%= link_to t('defaults.header.boards'), boards_path, class: 'nav-link text-dark text-decoration-none' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('defaults.header.search'), search_boards_path, class: 'nav-link text-dark text-decoration-none' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('defaults.header.mypage'), mypage_path, class: 'nav-link text-dark text-decoration-none' %>
-      </li>
-      <li class="nav-item">
-        <%= button_to t('defaults.header.logout'), logout_path, method: :delete, data: { turbo: false }, class: "nav-link btn btn-link text-dark text-decoration-none border-0 pb-2" %>
-      </li>
-    </ul>
-  </nav>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item">
+          <%= link_to t('defaults.header.boards'), boards_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('defaults.header.search'), search_boards_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('defaults.header.mypage'), mypage_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= button_to t('defaults.header.logout'), logout_path, method: :delete, data: { turbo: false }, class: "nav-link btn btn-link text-decoration-none border-0 w-100" %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
