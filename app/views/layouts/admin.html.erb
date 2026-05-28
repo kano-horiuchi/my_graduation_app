@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>【管理画面】日本酒Search</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <header>
+      <h1>管理者ダッシュボード</h1>
+      <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>
