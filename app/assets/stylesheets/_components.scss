@@ -1,0 +1,36 @@
+h1, h2, h3 { font-family: 'Zen Kurenaido', sans-serif; }
+
+.badge {
+  background-color: #d1ccc0 !important;
+  color: #4a4a4a !important;
+  border-radius: 20px !important;
+  padding: 0.5em 1em !important;
+  font-weight: normal !important;
+}
+
+.card {
+  background-color: #f9f7f2 !important; 
+  border: 1px solid #e0dcd5 !important; 
+}
+
+.bg-light {
+  background-color: #edeae4 !important;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #4a4a4a !important;
+  --bs-btn-border-color: #d1ccc0 !important;
+  --bs-btn-hover-color: #4a4a4a !important;
+  --bs-btn-hover-bg: #d1ccc0 !important;
+  --bs-btn-hover-border-color: #d1ccc0 !important;
+  --bs-btn-active-color: #4a4a4a !important;
+  --bs-btn-active-bg: #d1ccc0 !important;
+  --bs-btn-active-border-color: #d1ccc0 !important;
+  background-color: #f9f7f2 !important; 
+}
+
+.btn-check:checked + .btn-outline-secondary {
+  background-color: #d1ccc0 !important;
+  border-color: #d1ccc0 !important;
+  color: #4a4a4a !important;
+}
