@@ -1,8 +1,8 @@
-<div class="top-wrapper">
+<div class="top-wrapper" style="background-image: url('<%= image_path('top.jpg') %>'); display: flex; align-items: center; justify-content: center; height: calc(100vh - 134px); background-position: center; background-size: cover; background-repeat: no-repeat;">
   <div class="top-inner-text">
-    <h1 class="text-nowrap fs-4 fs-md-1"><%= t('defaults.app_name') %></h1>
-    <div class="mt-4">
-    <%= link_to t('defaults.top.view_boards'), boards_path, class: 'btn btn-outline-light rounded-0 px-4 py-3 fw-bold' %>
+    <h1 class="text-center">お気に入りの日本酒を<br class="d-md-none">見つけよう！</h1>
+    <div class="text-center mt-4">
+      <%= link_to t('defaults.top.view_boards'), boards_path, class: 'btn btn-outline-light rounded-0 px-4 py-3 fw-bold' %>
     </div>
   </div>
 </div>
