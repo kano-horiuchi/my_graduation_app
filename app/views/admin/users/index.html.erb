@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>ユーザー管理一覧</h2>
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>権限</th>
+        <th>登録日</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td> <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to '詳細', admin_user_path(user), class: 'btn btn-sm btn-outline-primary' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
