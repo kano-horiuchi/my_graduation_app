@@ -13,10 +13,10 @@
                   <th style="width: 5%;">ID</th>
                   <th style="width: 12%;">投稿者</th>
                   <th style="width: 10%;">画像</th>
-                  <th style="width: 18%;">銘柄名</th>
+                  <th style="width: 15%;">銘柄名</th>
                   <th style="width: 13%;"><%= Board.human_attribute_name(:tag_ids) %></th>
-                  <th style="width: 25%;">メモ</th>
-                  <th style="width: 17%;">投稿日時</th>
+                  <th style="width: 30%;">メモ</th>
+                  <th style="width: 13%;">投稿日時</th>
                   <th style="width: 5%;">操作</th>
                 </tr>
               </thead>
@@ -29,7 +29,7 @@
 
                     <td>
                       <% if board.board_image? %>
-                        <%= image_tag board.board_image_url, class: "img-thumbnail", style: "max-height: 50px; object-fit: cover;" %>
+                        <%= image_tag board.board_image_url, class: "rounded", style: "max-height: 50px; object-fit: cover;" %>
                       <% else %>
                         <span class="badge bg-light text-muted border">No Image</span>
                       <% end %>
@@ -37,7 +37,6 @@
 
                     <td>
                       <strong class="d-block text-dark"><%= board.title %></strong>
-                      <span class="text-muted small"><%= truncate(board.body, length: 20) %></span>
                     </td>
 
                     <td>
@@ -49,8 +48,9 @@
                     </td>
 
                     <td>
-                      <div class="p-2 bg-light rounded text-muted small" style="white-space: pre-wrap; max-height: 120px; overflow-y: auto;">
-                        <%= board.body.presence || "(メモはありません)" %>
+                      <div class="p-2 bg-light rounded text-muted small d-inline-block" 
+                            style="text-align: left !important; white-space: pre-wrap; max-height: 120px; overflow-y: auto; 
+                                  padding-top: 0 !important; margin-top: 0 !important;"> <%= board.body.presence || "(メモはありません)" %>
                       </div>
                     </td>
 
