@@ -1,0 +1,51 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="mb-3">
+        <%= link_to 'ユーザー一覧に戻る', admin_users_path, class: 'text-decoration-none text-muted small' %>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="card-title mb-4 border-bottom pb-2">ユーザー詳細情報</h2>
+
+          <table class="table table-bordered align-middle mt-3">
+            <tbody>
+              <tr>
+                <th class="table-light" style="width: 30%;">ユーザーID</th>
+                <td><%= @user.id %></td>
+              </tr>
+              <tr>
+                <th class="table-light">ユーザー名</th>
+                <td><%= @user.name %></td>
+              </tr>
+              <tr>
+                <th class="table-light">メールアドレス</th>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <th class="table-light">権限</th>
+                <td>
+                  <% if @user.owner? %>
+                    <span class="badge bg-danger">管理者</span>
+                  <% else %>
+                    <span class="badge bg-secondary">一般</span>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-light">登録日時</th>
+                <td><%= l @user.created_at, format: :long %></td>
+              </tr>
+              <tr>
+                <th class="table-light">更新日時</th>
+                <td><%= l @user.updated_at, format: :long %></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-11 mx-auto"> <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="card-title mb-4 border-bottom pb-2">
+            <%= Board.model_name.human %>管理一覧
+          </h2>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 5%;">ID</th>
+                  <th style="width: 12%;">投稿者</th>
+                  <th style="width: 10%;">画像</th>
+                  <th style="width: 18%;">銘柄名</th>
+                  <th style="width: 13%;"><%= Board.human_attribute_name(:tag_ids) %></th>
+                  <th style="width: 25%;">メモ</th>
+                  <th style="width: 17%;">投稿日時</th>
+                  <th style="width: 5%;">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @boards.each do |board| %>
+                  <tr>
+                    <td class="text-muted small"><%= board.id %></td>
+
+                    <td><%= board.user.name %></td>
+
+                    <td>
+                      <% if board.board_image? %>
+                        <%= image_tag board.board_image_url, class: "img-thumbnail", style: "max-height: 50px; object-fit: cover;" %>
+                      <% else %>
+                        <span class="badge bg-light text-muted border">No Image</span>
+                      <% end %>
+                    </td>
+
+                    <td>
+                      <strong class="d-block text-dark"><%= board.title %></strong>
+                      <span class="text-muted small"><%= truncate(board.body, length: 20) %></span>
+                    </td>
+
+                    <td>
+                      <div class="d-flex flex-wrap gap-1">
+                        <% board.tags.each do |tag| %>
+                          <span class="badge rounded-pill bg-secondary small" style="font-size: 0.75rem;"><%= tag.name %></span>
+                        <% end %>
+                      </div>
+                    </td>
+
+                    <td>
+                      <div class="p-2 bg-light rounded text-muted small" style="white-space: pre-wrap; max-height: 120px; overflow-y: auto;">
+                        <%= board.body.presence || "(メモはありません)" %>
+                      </div>
+                    </td>
+
+                    <td class="text-muted small">
+                      <%= l board.created_at, format: :long %>
+                    </td>
+
+                    <td>
+                      <%= button_to t('defaults.destroy'), admin_board_path(board), method: :delete, data: { turbo: false }, class: "btn btn-sm btn-danger", onclick: "return confirm('#{t('defaults.message.delete_confirm')}');" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

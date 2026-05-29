@@ -1,8 +1,22 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">管理者ダッシュボード</h1>
-</div>
-
-<div class="card p-4 shadow-sm">
-  <p>管理画面の基盤構築が成功しました！</p>
-  <p>現在のログインユーザー: <strong><%= current_user.name %></strong> (権限: <%= current_user.role %>)</p>
+<div class="container mt-4">
+  <h2>管理者ダッシュボード</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <h5 class="card-title">総ユーザー数</h5>
+          <p class="card-text fs-2"><%= @users_count %> 名</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <h5 class="card-title">総投稿数</h5>
+          <p class="card-text fs-2"><%= @boards_count %> 件</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
