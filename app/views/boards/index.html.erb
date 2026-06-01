@@ -4,7 +4,7 @@
   <% if params[:q].present? %>
     <div class="text-center mb-4">
       <p class="text-secondary mb-2"><%= t('defaults.search_results.display', count: @boards.count) %></p>
-      <%= link_to boards_path, class: "btn btn-sm btn-light rounded-pill border px-3 text-muted" do %>
+      <%= link_to search_boards_path, class: "btn btn-sm btn-light rounded-pill border px-3 text-muted" do %>
         <%= t('defaults.serach_clear') %>
       <% end %>
     </div>
