@@ -71,6 +71,8 @@ ja:
     search_page:
       title: "日本酒を探す"
       submit: "味わいタグを選んで検索！"
+      name_search: "銘柄名で検索"
+      tag_search: "タグで絞り込む"
     header:
       login: "ログイン"
       logout: "ログアウト"

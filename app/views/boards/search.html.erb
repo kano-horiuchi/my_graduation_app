@@ -8,7 +8,13 @@
     <div class="col-md-8">
 
       <%= search_form_for @q, url: boards_path, method: :get, html: { data: { turbo: false } } do |f| %>
+
+        <div class="mb-4">
+          <%= f.label :title_cont, t('defaults.search_page.name_search'), class: "form-label fw-bold text-secondary" %>
+          <%= f.search_field :title_cont, class: "form-control form-control-lg rounded-pill shadow-sm" %>
+        </div>
         <div class="tag-selection-area my-4">
+          <p class="text-center fw-bold text-secondary mb-2"><%= t('defaults.search_page.tag_search') %></p>
           <div class="d-flex flex-wrap gap-2 justify-content-center">
             <% Tag.all.each do |tag| %>
               <div class="search-tag-item">
