@@ -57,6 +57,11 @@ class BoardsController < ApplicationController
     @boards = @q.result(distinct: true).includes(:user, :tags).order(created_at: :desc)
   end
 
+  def autocomplete
+    titles = Board.where("title ILIKE ?", "%#{params[:term]}%").distinct.limit(5).pluck(:title)
+    render json: titles
+  end
+
   private
 
   def set_my_board

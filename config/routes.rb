@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :boards do
     collection do
       get "search"
+      get "autocomplete"
     end
   end
   get "terms", to: "static_pages#terms"
