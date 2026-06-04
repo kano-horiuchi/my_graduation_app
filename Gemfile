@@ -23,7 +23,7 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 gem "rails-i18n"
 
-gem 'sassc-rails'
+gem "sassc-rails"
 
 gem "ransack"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

@@ -64,7 +64,7 @@ class BoardsController < ApplicationController
 
   def favorites
     @q = current_user.favorite_boards.ransack(params[:q])
-    @boards = @q.result(distinct: true).includes(:user, :tags).order(created_at: :desc) 
+    @boards = @q.result(distinct: true).includes(:user, :tags).order(created_at: :desc)
   end
 
   private
