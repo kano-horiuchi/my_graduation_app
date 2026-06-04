@@ -7,11 +7,12 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
 
-      <%= search_form_for @q, url: boards_path, method: :get, html: { data: { turbo: false } } do |f| %>
+      <%= search_form_for @q, url: boards_path, method: :get, html: { data: { turbo: false, controller: "search-form" } } do |f| %>
 
         <div class="mb-4">
           <%= f.label :title_cont, t('defaults.search_page.name_search'), class: "form-label fw-bold text-secondary" %>
-          <%= f.search_field :title_cont, class: "form-control form-control-lg rounded-pill shadow-sm" %>
+          <%= f.search_field :title_cont, class: "form-control form-control-lg rounded-pill shadow-sm", data: { search_form_target: "input", action: "input->search-form#search" } %>
+          <div data-search-form-target="results" class="position-relative"></div>
         </div>
         <div class="tag-selection-area my-4">
           <p class="text-center fw-bold text-secondary mb-2"><%= t('defaults.search_page.tag_search') %></p>
