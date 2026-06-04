@@ -10,9 +10,13 @@
     </div>
   <% end %>
 
-  <div class="text-center my-5">
-    <%= link_to new_board_path, class: "btn btn-outline-primary btn-lg rounded-pill px-5 shadow-sm" do %>
+  <div class="d-flex flex-column align-items-center justify-content-center my-5 gap-3">
+    <%= link_to new_board_path, class: "btn btn-lg rounded-pill px-5 shadow-sm text-white", style: "min-width: 240px; max-width: 300px; background-color: #a8a090; border-color: #a8a090;" do %>
       <i class="bi bi-pencil-fill me-2"></i><%= t('.new_board') %>
+    <% end %>
+
+    <%= link_to favorites_boards_path, class: "btn rounded-pill px-2 shadow-sm", style: "min-width: 240px; max-width: 300px; background-color: #f9f7f2; border-color: #a8a090; color: #a8a090;" do %>
+      <i class="bi bi-heart-fill me-2"></i><%= t('.favorite_boards') %>
     <% end %>
   </div>
 

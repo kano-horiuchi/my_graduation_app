@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     collection do
       get "search"
       get "autocomplete"
+      get :favorites
     end
+    resource :favorite, only: [:create, :destroy]
   end
   get "terms", to: "static_pages#terms"
   get "privacy", to: "static_pages#privacy"

@@ -3,9 +3,14 @@
     <div class="col-md-8 mx-auto">
       <div class="card shadow-sm">
         <div class="card-body p-4">
-          <h2 class="card-title mb-4 border-bottom pb-2">
-            <%= @board.title %>
-          </h2>
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h2 class="card-title mb-0">
+              <%= @board.title %>
+            </h2>
+            <div class="flex-shrink-0 ps-3">
+              <%= render 'favorites/favorite_button', board: @board %>
+            </div>
+          </div>
 
           <div class="text-end text-muted small mb-3">
             <%= l @board.created_at, format: :long %>

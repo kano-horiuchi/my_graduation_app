@@ -62,6 +62,11 @@ class BoardsController < ApplicationController
     render json: titles
   end
 
+  def favorites
+    @q = current_user.favorite_boards.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user, :tags).order(created_at: :desc) 
+  end
+
   private
 
   def set_my_board
