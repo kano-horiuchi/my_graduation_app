@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "favorite_button_#{board.id}" do %>
+  <% if current_user.favorite?(board) %>
+    <%= link_to board_favorite_path(board), data: { turbo_method: :delete }, class: "text-danger text-decoration-none" do %>
+      <i class="bi bi-heart-fill" style="font-size: 1.5rem;"></i>
+    <% end %>
+  <% else %>
+    <%= link_to board_favorite_path(board), data: { turbo_method: :post }, class: "text-muted text-decoration-none" do %>
+      <i class="bi bi-heart" style="font-size: 1.5rem;"></i>
+    <% end %>
+  <% end %>
+<% end %>

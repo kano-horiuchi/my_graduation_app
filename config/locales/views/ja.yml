@@ -107,6 +107,10 @@ ja:
       title: "日本酒記録一覧"
       new_board: "新しく記録する"
       no_result: "記録がまだありません"
+      favorite_boards: "お気に入り一覧へ"
+    favorites:
+      title: "お気に入りした日本酒"
+      back: "投稿一覧へ戻る"
     show:
       title: "記録の詳細"
     board:

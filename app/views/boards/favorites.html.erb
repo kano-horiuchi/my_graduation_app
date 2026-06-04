@@ -1,0 +1,19 @@
+<div class="container pt-3">
+  <h1 class="text-center my-4"><%= t('.title') %></h1>
+
+  <div class="text-center my-5">
+    <%= link_to boards_path, class: "btn btn-outline-secondary rounded-pill px-4 shadow-sm" do %>
+      <i class="bi bi-arrow-left me-2"></i><%= t('.back') %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% if @boards.present? %>
+      <%= render partial: 'board', collection: @boards %>
+    <% else %>
+      <div class="text-center mb-3 text-muted py-5">
+        お気に入りした投稿はまだありません。
+      </div>
+    <% end %>
+  </div>
+</div>
