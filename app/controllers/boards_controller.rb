@@ -23,7 +23,7 @@ class BoardsController < ApplicationController
     if @recommended_boards.length < 3
       fallback_limit = 3 - @recommended_boards.length
       recommended_ids = @recommended_boards.to_a.map(&:id)
-      excluded_ids = [@board.id] + recommended_ids
+      excluded_ids = [ @board.id ] + recommended_ids
       fallback_boards = Board.where.not(id: excluded_ids).order(created_at: :desc).limit(fallback_limit)
       @recommended_boards = @recommended_boards.to_a + fallback_boards.to_a
     end
