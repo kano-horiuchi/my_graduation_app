@@ -24,7 +24,19 @@ class BoardsController < ApplicationController
   end
 
   def update
-    if @board.update(board_params)
+    delete_ids = params[:board][:delete_image_ids]&.map(&:to_i) || []
+    if delete_ids.present?
+      remain_images = @board.board_images.each_with_index.reject { |_, index| delete_ids.include?(index) }.map(&:first)
+      @board.board_images = remain_images
+      @board.save if @board.board_images_changed?
+    end
+
+    new_images = board_params[:board_images]
+    if new_images.present?
+      @board.board_images += new_images
+    end
+
+    if @board.update(board_params.except(:board_images))
       redirect_to board_path(@board), success: t("defaults.update.success"), status: :see_other
     else
       flash.now[:danger] = t("defaults.message.not_updated")
@@ -74,6 +86,6 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.require(:board).permit(:title, :body, :board_image, :board_image_cache, tag_ids: [])
+    params.require(:board).permit(:title, :body, tag_ids: [], board_images: [])
   end
 end

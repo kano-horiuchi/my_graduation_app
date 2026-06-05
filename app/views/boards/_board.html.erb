@@ -1,6 +1,8 @@
 <div class="col-12 col-md-6 col-lg-4 mb-3">
   <div id="board-<%= board.id %>" class="card h-100 shadow-sm">
-    <% if board.board_image? %>
+    <% if board.board_images.present? %>
+      <%= image_tag board.board_images.first.url, class: "card-img-top img-fluid", style: "height: 200px; object-fit: cover;" %>
+    <% elsif board.board_image? %>
       <%= image_tag board.board_image_url, class: "card-img-top img-fluid", style: "height: 200px; object-fit: cover;" %>
     <% else %>
       <%= image_tag 'top.jpg', class: "card-img-top img-fluid", style: "height: 200px; object-fit: cover;" %>

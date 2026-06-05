@@ -22,7 +22,7 @@ ja:
         title: "銘柄名"
         body: "メモ"
         tag_ids: "味わいタグ"
-        board_image: "日本酒の写真"
+        board_images: "日本酒の写真"
       tag:
         name: "タグ名"
       user:
@@ -101,8 +101,8 @@ ja:
       fail: "更新できませんでした"
     edit:
       title: "記録の編集"
-      image: "現在の写真"
-      message: "新しく選択すると、現在の写真が上書きされます"
+      image: "現在登録されている画像（削除したい画像にチェックを入れてください）"
+      message: "新しく写真を追加したい場合は、こちらから選択してください"
     index:
       title: "日本酒記録一覧"
       new_board: "新しく記録する"
