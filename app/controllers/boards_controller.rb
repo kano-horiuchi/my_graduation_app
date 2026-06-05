@@ -18,6 +18,15 @@ class BoardsController < ApplicationController
     Rails.logger.info "board_image present?: #{@board.board_image?}"
     Rails.logger.info "board_image.url: #{@board.board_image.url if @board.board_image?}"
     Rails.logger.info "========================="
+    tag_ids = @board.tags.pluck(:id)
+    @recommended_boards = Board.joins(:tags).where(tags: { id: tag_ids }).where.not(id: @board.id).group(:id).order(created_at: :desc).limit(3)
+    if @recommended_boards.length < 3
+      fallback_limit = 3 - @recommended_boards.length
+      recommended_ids = @recommended_boards.to_a.map(&:id)
+      excluded_ids = [ @board.id ] + recommended_ids
+      fallback_boards = Board.where.not(id: excluded_ids).order(created_at: :desc).limit(fallback_limit)
+      @recommended_boards = @recommended_boards.to_a + fallback_boards.to_a
+    end
   end
 
   def edit

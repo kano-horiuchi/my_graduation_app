@@ -76,7 +76,6 @@ ja:
     header:
       login: "ログイン"
       logout: "ログアウト"
-      boards: "日本酒を探す"
       mypage: "マイページ"
       boards: "日本酒一覧"
       search: "検索"
@@ -113,6 +112,7 @@ ja:
       back: "投稿一覧へ戻る"
     show:
       title: "記録の詳細"
+      recommend: "こちらの日本酒もおすすめ"
     board:
       show_detail: "詳細を見る"
   time:

@@ -62,6 +62,43 @@
           </div>
         </div>
       </div>
+
+      <div class="recommend-section mt-5">
+        <h4 class="fw-bold text-center mb-4"><%= t('boards.show.recommend') %></h4>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <% @recommended_boards.each do |board| %>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0 bg-white">
+                <div class="ratio ratio-4x3 bg-light rounded-top overflow-hidden">
+                  <% if board.board_images.present? %>
+                    <%= image_tag board.board_images[0].url, class: "img-fluid object-fit-cover" %>
+                  <% elsif board.board_image? %>
+                    <%= image_tag board.board_image_url, class: "img-fluid object-fit-cover" %>
+                  <% else %>
+                    <div class="d-flex align-items-center justify-content-center text-muted small">No Image</div>
+                  <% end %>
+                </div>
+
+                <div class="card-body d-flex flex-column p-3">
+                  <h6 class="card-title fw-bold text-dark mb-2 text-truncate">
+                    <%= board.title %>
+                  </h6>
+
+                  <div class="mb-3 flex-wrap gap-1 d-flex">
+                    <% board.tags.take(2).each do |tag| %>
+                      <span class="badge rounded-pill bg-secondary small" style="font-size: 0.75rem;">
+                        <%= tag.name %>
+                      </span>
+                    <% end %>
+                  </div>
+
+                  <%= link_to t('boards.board.show_detail'), board_path(board), class: 'btn btn-outline-primary btn-sm w-100 mt-auto' %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
