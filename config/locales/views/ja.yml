@@ -57,6 +57,7 @@ ja:
     update:
       success: "プロフィールを更新しました"
       fail: "プロフィールを更新できませんでした"
+      advise: "好みの味わいを保存しました"
   defaults:
     app_name: "お気に入りの日本酒を見つけよう！"
     search: "検索"
@@ -69,7 +70,7 @@ ja:
       deleted: "記録を削除しました"
       delete_confirm: "本当に削除しますか？"
     search_page:
-      title: "日本酒を探す"
+      title: "好みの日本酒を探してみよう！"
       submit: "味わいタグを選んで検索！"
       name_search: "銘柄名で検索"
       tag_search: "タグで絞り込む"
@@ -103,7 +104,7 @@ ja:
       image: "現在登録されている画像（削除したい画像にチェックを入れてください）"
       message: "新しく写真を追加したい場合は、こちらから選択してください"
     index:
-      title: "日本酒記録一覧"
+      title: "みんなの日本酒記録"
       new_board: "新しく記録する"
       no_result: "記録がまだありません"
       favorite_boards: "お気に入り一覧へ"
