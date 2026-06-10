@@ -10,5 +10,11 @@ application.register("gallery", GalleryController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import ImageCompressionController from "./image_compression_controller"
+application.register("image-compression", ImageCompressionController)
+
 import SearchFormController from "./search_form_controller"
 application.register("search-form", SearchFormController)
+
+import TasteAdvisorController from "./taste_advisor_controller"
+application.register("taste-advisor", TasteAdvisorController)

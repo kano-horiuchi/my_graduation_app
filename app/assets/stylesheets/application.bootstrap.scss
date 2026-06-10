@@ -113,3 +113,12 @@
     }
   }
 }
+
+.form-range::-webkit-slider-thumb {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.form-range::-moz-range-thumb {
+  position: relative !important;
+}

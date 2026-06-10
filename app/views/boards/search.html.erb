@@ -1,7 +1,103 @@
-<div class="container py-5">
+<div class="container py-5" data-controller="taste-advisor">
   <div class="text-center mb-5"> 
     <h2 class="mb-3"><%= t('defaults.search_page.title') %></h2>
-    <h5 class="text-secondary py-3"><%= t('defaults.search_page.submit') %></h5>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-10">
+      <div class="card shadow-sm border border-light-subtle rounded-4 bg-body-tertiary">
+        <div class="card-body p-4">
+          <div class="row g-4 align-items-center">
+
+            <div class="col-md-6 border-end border-light-subtle">
+              <h4 class="h6 fw-bold mb-3 text-dark-emphasis text-center">
+                <i class="fa-solid fa-sliders me-1 text-primary-emphasis"></i> 好みの味わいを選んで<br>あなたに合った味わいタグを探しましょう
+              </h4>
+
+              <%= form_with model: current_user, url: profile_path, method: :patch, local: true, data: { turbo: false } do |f| %>
+                <div class="mb-4">
+                  <%= f.label :fruity_level, "☪️ 香りの強さ（フルーティ）", class: "form-label small fw-bold text-dark-emphasis mb-1" %>
+                  <div class="position-relative pb-4">
+                    <div class="d-flex justify-content-between position-absolute w-100 px-1" style="top: 10px; pointer-events: none;">
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                    </div>
+
+                    <%= f.range_field :fruity_level, in: 1..5, class: "form-range",
+                        data: { "taste-advisor-target": "fruity", action: "input->taste-advisor#advise" } %>
+
+                    <div class="d-flex justify-content-between w-100 px-1 position-absolute" style="bottom: 0;">
+                      <span class="text-body-secondary" style="font-size: 0.75rem;">控えめ</span>
+                      <span class="text-body-secondary" style="font-size: 0.75rem;">強い</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <%= f.label :rich_level, "✴️ 味わいの濃さ（コク）", class: "form-label small fw-bold text-dark-emphasis mb-1" %>
+                  <div class="position-relative pb-4">
+
+                    <div class="d-flex justify-content-between position-absolute w-100 px-1" style="top: 10px; pointer-events: none;">
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                    </div>
+
+                    <%= f.range_field :rich_level, in: 1..5, class: "form-range",
+                        data: { "taste-advisor-target": "rich", action: "input->taste-advisor#advise" } %>
+
+                    <div class="d-flex justify-content-between w-100 px-1 position-absolute" style="bottom: 0;">
+                      <span class="text-body-secondary" style="font-size: 0.75rem;">すっきり</span>
+                      <span class="text-body-secondary" style="font-size: 0.75rem;">芳醇・コク</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <%= f.label :dry_level, "✳️ キレの良さ（スッキリ度）", class: "form-label small fw-bold text-dark-emphasis mb-1" %>
+                  <div class="position-relative pb-4">
+
+                    <div class="d-flex justify-content-between position-absolute w-100 px-1" style="top: 10px; pointer-events: none;">
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                      <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #ccc;"></span>
+                    </div>
+
+                    <%= f.range_field :dry_level, in: 1..5, class: "form-range",
+                        data: { "taste-advisor-target": "dry", action: "input->taste-advisor#advise" } %>
+
+                    <div class="d-flex justify-content-between w-100 px-1 position-absolute" style="bottom: 0;">
+                      <span class="text-body-secondary" style="font-size: 0.75rem;">おだやか</span>
+                    <span class="text-body-secondary" style="font-size: 0.75rem;">キレ</span>
+                    </div>
+                  </div>
+                </div>
+
+                <%= f.submit "好みを保存する(いつでも変更できます)", class: "btn btn-outline-secondary btn-sm w-100 mt-2 rounded-pill shadow-sm text-dark-emphasis fw-bold" %>
+              <% end %>
+            </div>
+
+            <div class="col-md-6 text-center px-4">
+              <h5 id="type-display" class="h6 fw-bold text-dark mb-2" data-taste-advisor-target="resultType">
+                判定中...
+              </h5>
+              <div class="mb-3" data-taste-advisor-target="resultTags">
+              </div>
+              <p class="small text-muted mb-0">
+                表示されたおすすめタグを<br>下の検索エリアから選んで検索してみましょう！
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="row justify-content-center">

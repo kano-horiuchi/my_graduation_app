@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_05_002709) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_10_005143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,8 +44,26 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_05_002709) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "post_tags", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +76,9 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_05_002709) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0, null: false
+    t.integer "fruity_level", default: 3
+    t.integer "dry_level", default: 3
+    t.integer "rich_level", default: 3
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
@@ -66,4 +87,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_05_002709) do
   add_foreign_key "boards", "users"
   add_foreign_key "favorites", "boards"
   add_foreign_key "favorites", "users"
+  add_foreign_key "post_tags", "posts"
+  add_foreign_key "post_tags", "tags"
+  add_foreign_key "posts", "users"
 end
