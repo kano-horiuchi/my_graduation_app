@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to boards_path, notice: "ログインしました"
     else
-      flash.now[:alert] = "ログインに失敗しました"
+      flash.now[:alert] = "メールアドレスかパスワードが間違っています"
       render :new, status: :unprocessable_entity
     end
   end
