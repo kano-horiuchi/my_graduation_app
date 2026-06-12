@@ -7,6 +7,7 @@ class OauthsController < ApplicationController
   def callback
     provider = :google
     if (@user = login_from(provider))
+      auto_login(@user)
       redirect_to root_path, notice: "ログインしました"
     else
       begin
