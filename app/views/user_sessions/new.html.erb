@@ -18,6 +18,11 @@
         </div>
       <% end %>
       <div class='text-center my-3'>
+        <%= button_to auth_at_provider_path(provider: :google), method: :post, data: { turbo: false }, class: "btn btn-outline-dark" do %>
+          <i class="bi bi-google"></i> Googleでログイン
+        <% end %>
+      </div>
+      <div class='text-center my-3'>
         <%= link_to t('sessions.new.to_register_page'), new_user_path %>
       </div>
     </div>

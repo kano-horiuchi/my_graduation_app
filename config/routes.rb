@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   end
   get "terms", to: "static_pages#terms"
   get "privacy", to: "static_pages#privacy"
+
+  post "oauth/callback/:provider" => "oauths#callback"
+  get "oauth/callback/:provider" => "oauths#callback"
+  post "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
   delete "logout", to: "user_sessions#destroy"
