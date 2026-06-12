@@ -2,6 +2,9 @@ Rails.application.config.sorcery.submodules = [:external]
 Rails.application.config.sorcery.configure do |config|
   config.user_class = 'User'
   config.external_providers = [:google]
+  config.user_config do |user|
+    user.authentications_class = Authentication
+  end
 
   config.google.key = Rails.application.credentials.dig(:google, :client_id)
   config.google.secret = Rails.application.credentials.dig(:google, :client_secret)
