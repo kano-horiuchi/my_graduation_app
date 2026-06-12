@@ -25,6 +25,10 @@ gem "rails-i18n"
 
 gem "sassc-rails"
 
+gem "omniauth-google-oauth2"
+
+gem "omniauth-rails_csrf_protection"
+
 gem "ransack"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

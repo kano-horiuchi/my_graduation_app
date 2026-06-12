@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_boards, through: :favorites, source: :board
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
   enum :role, { general: 0, owner: 1 }
 
   def own?(object)
