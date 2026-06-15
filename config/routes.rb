@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get "password_resets/new"
+  get "password_resets/edit"
   get "profiles/edit"
   get "profiles/update"
   root "static_pages#top"
   resources :users, only: %i[new create]
   resource :mypage, only: %i[show], controller: "mypages"
   resource :profile, only: %i[show edit update]
+  resources :password_resets, only: %i[new create edit update]
   resources :boards do
     collection do
       get "search"

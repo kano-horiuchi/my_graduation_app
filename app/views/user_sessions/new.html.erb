@@ -17,12 +17,15 @@
           <%= f.submit t('sessions.new.submit'), class: "btn btn-primary" %>
         </div>
       <% end %>
-      <div class='text-center my-3'>
+      <div class='text-center my-5'>
         <%= button_to auth_at_provider_path(provider: :google), method: :post, data: { turbo: false }, class: "btn btn-outline-dark" do %>
           <i class="bi bi-google"></i> Googleでログイン
         <% end %>
       </div>
-      <div class='text-center my-3'>
+      <div class='text-center my-5'>
+        <%= link_to "パスワードをお忘れの方はこちら", new_password_reset_path, class: "text-muted text-decoration-none" %>
+      </div>
+      <div class='text-center my-5'>
         <%= link_to t('sessions.new.to_register_page'), new_user_path %>
       </div>
     </div>

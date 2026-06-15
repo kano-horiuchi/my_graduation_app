@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto">
+      <div class='text-center my-5'>
+        <h1>パスワードをお忘れの方</h1>
+        <p class="text-muted">登録済みのメールアドレスを入れてください</p>
+      </div>
+
+      <%= form_with url: password_resets_path, local: true do |f| %>
+        <div class="mb-3">
+          <%= f.label :email, "メースアドレス", class: "form-label" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+
+        <div class="text-center my-5">
+          <%= f.submit "リセットメールを送信", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <div class='text-center my-3'>
+        <%= link_to "ログインページに戻る", login_path, class: "text-muted text-decoration-none" %>
+      </div>
+    </div>
+  </div>
+</div>
