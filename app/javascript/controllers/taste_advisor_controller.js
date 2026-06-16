@@ -45,14 +45,16 @@ export default class extends Controller {
     const uniqueTags = [...new Set(recommendedTags)]
 
     this.resultTypeTarget.innerHTML = `
-      <div class="alert alert-info text-start mb-3">
-        <h5 class="fw-bold text-center mb-2">🎯 オススメの日本酒タイプ <br>${typeName}</h5>
+      <div class="p-3 mb-3" style="border: 1px solid #b3d7ff; background-color: #e7f1ff; border-radius: 8px;">
+        <h6 class="fw-bold text-center mb-2"> オススメの日本酒タイプ</h6>
+        <h5 class="fw-bold text-center mb-2">${typeName}</h5>
         <p class="mb-0 small text-muted text-center">${typeDesc}</p>
       </div>
     `
 
     this.resultTagsTarget.innerHTML = uniqueTags
-      .map(tag => `<span class="badge bg-success m-1 fs-6">${tag}</span>`)
+      .map(tag => `<span class="badge" style="background-color: #d1ccc0; color: #4a4a4a; border-radius: 20px; padding: 0.6em 1.5em; font-size: 0.95rem; font-weight: normal; margin: 4px;">${tag}</span>`)
       .join("")
+
   }
 }

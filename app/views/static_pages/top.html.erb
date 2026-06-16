@@ -1,7 +1,11 @@
 <div class="top-wrapper" style="background-image: url('<%= image_path('top.jpg') %>'); display: flex; align-items: center; justify-content: center; height: calc(100vh - 134px); background-position: center; background-size: cover; background-repeat: no-repeat;">
   <div class="top-inner-text">
-    <h1 class="text-center">お気に入りの日本酒を<br class="d-md-none">見つけよう！</h1>
-    <div class="text-center mt-4">
+    <h1 class="text-center">お気に入りの日本酒を<br>見つけよう！</h1>
+    <p class="lead" style="max-width: 900px; margin: 0 auto;">
+    日本酒を買うとき、<br class="d-md-none">何を選んだらいいのか<br class="d-md-none">悩んだことはありませんか？<br>
+    まずはみんなの投稿から<br class="d-md-none">お気に入りの一杯を探してみましょう
+    </p>
+    <div class="text-center mt-5">
       <%= link_to t('defaults.top.view_boards'), boards_path, class: 'btn btn-outline-light rounded-0 px-4 py-3 fw-bold' %>
     </div>
   </div>
