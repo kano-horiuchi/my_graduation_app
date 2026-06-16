@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import LoadingController from "./loading_controller"
+application.register("loading", LoadingController)
+
 import GalleryController from "./gallery_controller"
 application.register("gallery", GalleryController)
 
