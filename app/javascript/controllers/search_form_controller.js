@@ -36,7 +36,7 @@ export default class extends Controller {
         this.inputTarget.value = title;
         this.clearResults();
         this.element.requestSubmit();
-      }); // 💡 【ここを修正！】消えていた閉じカッコを追加しました！
+      }); 
 
       ul.appendChild(li);
     });
