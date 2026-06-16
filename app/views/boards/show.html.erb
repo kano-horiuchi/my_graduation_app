@@ -54,10 +54,13 @@
             <div class="p-3 bg-light rounded" style="white-space: pre-wrap;"><%= @board.body.presence&.strip || "(メモはありません)" %></div>
           </div>
 
-          <div class="d-flex justify-content-end mt-5">
+          <div class="d-flex justify-content-end mt-5 align-items-center" data-controller="loading">
             <% if current_user.own?(@board) %>
               <%= link_to t('defaults.update.submit'), edit_board_path(@board), class: "btn btn-edit me-2" %>
-              <%= button_to t('defaults.destroy'), board_path(@board), method: :delete, data: { turbo: false }, class: "btn btn-delete", onclick: "return confirm('#{t('defaults.message.delete_confirm')}');" %>
+              <%= button_to t('defaults.destroy'), board_path(@board), method: :delete, data: { turbo: false, action: "click->loading#show" }, class: "btn btn-delete", onclick: "return confirm('#{t('defaults.message.delete_confirm')}');" %>
+              <div class="text-danger ms-2 d-none" data-loading-target="message">
+                <strong>削除中...</strong>
+              </div>
             <% end %>
           </div>
         </div>

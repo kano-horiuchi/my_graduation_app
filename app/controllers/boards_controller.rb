@@ -9,6 +9,9 @@ class BoardsController < ApplicationController
       @boards = @boards.with_all_tags(params[:q][:with_all_tags])
     end
     @boards = @boards.includes(:user, :tags).order(created_at: :desc)
+    if current_user
+      @favorite_board_ids = current_user.favorites.pluck(:board_id)
+    end
   end
 
   def show
@@ -45,7 +48,7 @@ class BoardsController < ApplicationController
       @board.board_images += new_images
     end
 
-    if @board.update(board_params.except(:board_images))
+    if @board.update(board_params.except(:board_images).except(:delete_image_ids))
       redirect_to board_path(@board), success: t("defaults.update.success"), status: :see_other
     else
       flash.now[:danger] = t("defaults.message.not_updated")
@@ -95,6 +98,6 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.require(:board).permit(:title, :body, tag_ids: [], board_images: [])
+    params.require(:board).permit(:title, :body, :board_image, tag_ids: [], board_images: [])
   end
 end

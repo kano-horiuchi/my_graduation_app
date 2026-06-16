@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "favorite_button_#{board.id}" do %>
-  <% if current_user.favorite?(board) %>
+  <% if @favorite_board_ids&.include?(board.id) %>
     <%= link_to board_favorite_path(board), data: { turbo_method: :delete }, class: "text-danger text-decoration-none" do %>
       <i class="bi bi-heart-fill" style="font-size: 1.5rem;"></i>
     <% end %>
