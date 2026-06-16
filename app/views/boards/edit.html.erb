@@ -15,7 +15,7 @@
         <div class="mb-3">
           <label class="form-label d-block">
             <%= Board.human_attribute_name(:tag_ids) %>
-            <span class="badge bg-danger ms-2">必須</span>
+            <span class="badge bg-danger ms-2">必須項目</span>
           </label>
           <div class="d-flex flex-wrap gap-2">
             <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
