@@ -17,7 +17,19 @@ class User < ApplicationRecord
     object.user_id == id
   end
 
+  def favorite(board)
+    favorite_boards << board
+  end
+
+  def unfavorite(board)
+    favorite_boards.destroy(board)
+  end
+
   def favorite?(board)
     favorite_boards.include?(board)
+  end
+
+  def admin?
+    owner?
   end
 end

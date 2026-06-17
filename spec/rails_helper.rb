@@ -40,9 +40,14 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include Sorcery::TestHelpers::Rails::Request, type: :request
+
+  config.before(:each, type: :system) do
+    driven_by :selenium, using: :headless_chrome, screen_size: [ 1400, 1000 ]
+    Capybara.default_max_wait_time = 10
+  end
+
   config.use_transactional_fixtures = true
 
   config.include FactoryBot::Syntax::Methods
