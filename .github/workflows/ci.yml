@@ -90,7 +90,7 @@ jobs:
         run: npm run build:css
 
       - name: Build JS
-        run: npm run build:js
+        run: npm run build
 
       - name: Run tests
         env:
