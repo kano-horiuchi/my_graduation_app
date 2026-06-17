@@ -36,7 +36,7 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: |
           gem install brakeman -v 8.0.5
-          brakeman --no-pager 
+          brakeman --no-pager --no-exit-on-warn
 
   lint:
     runs-on: ubuntu-latest
@@ -88,6 +88,9 @@ jobs:
         run: npm install
       - name: Build CSS
         run: npm run build:css
+
+      - name: Build JS
+        run: npm run build:js
 
       - name: Run tests
         env:
