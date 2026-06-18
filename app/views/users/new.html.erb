@@ -24,12 +24,18 @@
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
 
-        <div class="d-grid gap-2 mb-3">
+        <div class="d-grid gap-2 mb-5">
           <%= f.submit t('users.new.submit'), class: "btn btn-primary" %>
         </div>
       <% end %>
 
-      <div class="text-center">
+      <div class='text-center my-5'>
+        <%= button_to auth_at_provider_path(provider: :google), method: :post, data: { turbo: false }, class: "btn btn-outline-dark" do %>
+          <i class="bi bi-google"></i> Googleアカウントで登録
+        <% end %>
+      </div>
+
+      <div class="text-center my-5">
         <%= link_to t('users.new.to_login_page'), login_path, class: "text-decoration-none" %>
       </div>
     </div>
