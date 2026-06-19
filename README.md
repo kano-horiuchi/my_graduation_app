@@ -1,6 +1,9 @@
 # 日本酒Search
 サービスURL：https://sakesearch-app.com/
 
+<img width="1200" height="630" alt="日本酒Search" src="https://github.com/user-attachments/assets/0b89203c-22dc-4d6e-99e5-61a38fd4d8be" />
+
+
 1. サービス概要
    
 家でも美味しい日本酒が飲みたいけど何を選んだらいいのか分からない初心者に向けて、味わいタグを選ぶだけで日本酒を気軽に検索し、好みに合った日本酒を探せるサービス
