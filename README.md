@@ -1,4 +1,5 @@
-# README
+# 日本酒Search
+サービスURL：https://sakesearch-app.com/
 
 1. サービス概要
    
