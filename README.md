@@ -1,7 +1,8 @@
 # 日本酒Search
 サービスURL：https://sakesearch-app.com/
 
-<img width="1200" height="630" alt="日本酒Search" src="https://github.com/user-attachments/assets/0b89203c-22dc-4d6e-99e5-61a38fd4d8be" />
+<img width="750" height="394" alt="日本酒Search (1)" src="https://github.com/user-attachments/assets/1f118709-8620-4166-917f-09282b88dc54" />
+
 
 
 1. サービス概要
