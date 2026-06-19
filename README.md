@@ -15,23 +15,25 @@
 # 🔍機能紹介
 
 # 🧑‍💻使用した技術
-　　- フレームワーク：Ruby on Rails
+　　-  フレームワーク：Ruby on Rails
   
-　　- DB：PostgreSQL
+　　-  DB：PostgreSQL
   
-　　- デプロイ先：Render
+　　-  デプロイ先：Render
   
-　　- 使用予定ライブラリ：
+　　-  使用予定ライブラリ：
   
-　　- 画像アップロード：CarrierWave
+　　-  画像アップロード：CarrierWave
   
-　　- ページネーション：kaminari
+　　-  ページネーション：kaminari
    
-　　- 認証：Sorcery  
+　　-  認証：Sorcery  
 
-   ER図: https://app.diagrams.net/#G1XPJWqstFfw4ZONJrgP-tTCLRwRkd3y_N#%7B%22pageId%22%3A%22ZTJpqxGzQrN0hIwOVIRv%22%7D  
+###  ER図  
+https://app.diagrams.net/#G1XPJWqstFfw4ZONJrgP-tTCLRwRkd3y_N#%7B%22pageId%22%3A%22ZTJpqxGzQrN0hIwOVIRv%22%7D  
 
-   画面遷移図: https://www.figma.com/design/QwkhbHKzygYgSrBRGOqfJ1/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%E4%BD%9C%E6%88%90?node-id=0-1&p=f&t=quTMOrNKeOrNIjF2-0  
+###  画面遷移図  
+https://www.figma.com/design/QwkhbHKzygYgSrBRGOqfJ1/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%E4%BD%9C%E6%88%90?node-id=0-1&p=f&t=quTMOrNKeOrNIjF2-0  
 
      
 
