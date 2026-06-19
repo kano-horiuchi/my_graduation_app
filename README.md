@@ -15,19 +15,19 @@
 # 🔍機能紹介
 
 # 🧑‍💻使用した技術
-　　-  フレームワーク：Ruby on Rails
+フレームワーク：Ruby on Rails
   
-　　-  DB：PostgreSQL
+DB：PostgreSQL
   
-　　-  デプロイ先：Render
+デプロイ先：Render
   
-　　-  使用予定ライブラリ：
+使用予定ライブラリ：
   
-　　-  画像アップロード：CarrierWave
+画像アップロード：CarrierWave
   
-　　-  ページネーション：kaminari
+ページネーション：kaminari
    
-　　-  認証：Sorcery  
+認証：Sorcery  
 
 ###  ER図  
 https://app.diagrams.net/#G1XPJWqstFfw4ZONJrgP-tTCLRwRkd3y_N#%7B%22pageId%22%3A%22ZTJpqxGzQrN0hIwOVIRv%22%7D  
