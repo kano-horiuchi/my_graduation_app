@@ -4,7 +4,6 @@
 <img width="854" height="480" alt="日本酒Search (1000 x 630 px) (600 x 330 px) (Webサイト) (1)" src="https://github.com/user-attachments/assets/c3e1bda6-84f5-4a8d-a2d2-35cc8a1e323e" />
 
 
-
 ## 🍶サービス概要  
 
 ### お気に入りの日本酒を見つけよう！日本酒の検索・記録サービス
