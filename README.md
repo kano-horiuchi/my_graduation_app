@@ -1,7 +1,7 @@
 # 日本酒Search
 サービスURL：https://sakesearch-app.com/
 
-<video src="https://github.com/user-attachments/assets/d5350f06-0dff-4fe5-a63a-8b2861c37602" poster="example1.jpg" muted autoplay playsinline loop></video>
+<img width="854" height="480" alt="日本酒Search (1000 x 630 px) (600 x 330 px) (Webサイト) (1)" src="https://github.com/user-attachments/assets/c3e1bda6-84f5-4a8d-a2d2-35cc8a1e323e" />
 
 
 
@@ -16,7 +16,7 @@
 ## 💡開発の背景  
 
 日本酒を楽しみたいと思い店頭へ足を運んでも、ラベルの情報だけでは味のイメージが掴めず、  
-どれを選べばよいか分からなくて迷走し、結局選ぶことができずに購入を諦めてしまうこともありました。  
+どれを選べばよいか分からなくて迷走し、結局選ぶことができずに購入を諦めてしまうことがありました。  
 店員さんに相談するにも少し勇気がいりますし、かといってその場で一つひとつ検索して調べるのも手間がかかります。  
 
 一部の店舗では味の傾向を書いたポップが掲示されており、非常に便利だと感じていました。  
@@ -27,56 +27,91 @@
 <br>
 ## 🔍主な機能紹介　　
 
-####  🧚ユーザー登録、ログイン
-<br>  
 
-####  🧚味わいタグ、銘柄名で日本酒検索する 
-https://github.com/user-attachments/assets/c903d755-a5f8-4db6-b5d7-0cddd0d5fb0c
+###  🧚ユーザー登録、ログイン
+「ニックネーム」「パスワード」「メールアドレス」「確認用メールアドレス」を入力し、ユーザー登録を行います。  
+登録後は、自動的にログイン処理が行われ、すぐにサービスを利用できるようになっています。  
+また、Googleアカウントでのログインも可能です。
+<br>
+<br>
+<img width="640" height="344" alt="Jun-23-2026 17-09-12" src="https://github.com/user-attachments/assets/907da1fd-b35f-4833-be34-80c99609dfc6" />
 
 
-
-<br>  
-
-####  🧚好みの味わいを選ぶことでおすすめの味わいタグを表示
-<br>  
-
-####  🧚日本酒を記録する
-<br>  
-
-####  🧚みんなの記録を見る
+<br>
 <br>
 
-####  🧚お気に入りの記録にいいねする
+
+###  🧚味わいタグで検索する  
+
+味わいタグを選ぶと、選んだタグのついた日本酒記録が一覧で表示されます。
+<br>
+<br>
+<img width="640" height="332" alt="Jun-23-2026 17-02-53" src="https://github.com/user-attachments/assets/cfb4d1f8-bf98-4c36-9b1a-634db4bcd049" />
+
+<br>
+<br>
+
+###  🧚銘柄名で検索する
+気になる日本酒の銘柄を入力すると銘柄名が一致する日本酒記録が表示されます。
+<br>
+<br>
+<img width="640" height="324" alt="Jun-23-2026 17-03-13" src="https://github.com/user-attachments/assets/ad59cbbf-b15c-4718-a339-1f40ac02b01a" />
 
 
 
-・飲んだ日本酒を投稿する機能 → 銘柄名、タグ(既存のもの)、写真（任意）、メモ(任意)をつけて投稿する
-      
-・日本酒検索機能 → タグによる検索(まず4種類のタグを用意し、タグボタンを押すとタグづけされた投稿が表示される)
-     
-・投稿一覧機能 → 日本酒の写真が一覧で表示されてクリックすると詳細を見ることができる
+<br>
+<br>
 
-・レコメンド機能
+###  🧚好みの味わいを選ぶことでおすすめの味わいタグを表示
+チャートを好みに合わせて動かすとおすすめタグが表示されます。  
+検索する際、どのタグを選べばいいか分からない時におすすめです。
+<br>
+<br>
+<img width="640" height="348" alt="Jun-23-2026 17-02-04" src="https://github.com/user-attachments/assets/a66f3a40-cbb4-4b0c-bdc1-8902cd4d7c8f" />
+
+
+<br>
+<br>
+
+###  🧚日本酒を記録する
+日本酒を「銘柄名」「タグ」「写真」「メモ」と一緒に記録できます。  
+銘柄名とタグがあれば記録できるので写真を撮り忘れても安心です。
+<br>
+<br>
+<img width="640" height="358" alt="Jun-23-2026 17-13-15" src="https://github.com/user-attachments/assets/55057612-7a82-4631-9aa4-4e9a4833e6e2" />
+
+
+<br>
+<br>
+
+### 🧚みんなの記録を見る
+他ユーザーの記録を見ることができます。  
+詳細ページを開き、スクロールすると似たテイストの日本酒がおすすめとして表示されます。
+<br>
+<br>
+<img width="640" height="318" alt="Jun-23-2026 17-03-29" src="https://github.com/user-attachments/assets/592d42ba-ae35-4c40-944d-167025fccb64" />
+
 
 <br>
 <br>
 
 ## 🧑‍💻使用した技術  　
 
-フレームワーク：Ruby on Rails
-  
-DB：PostgreSQL
-  
-デプロイ先：Render
-  
-使用予定ライブラリ：
-  
-画像アップロード：CarrierWave
-  
-ページネーション：kaminari
-   
-認証：Sorcery  
+| カテゴリ | 技術・ライブラリ |
+| :--- | :--- |
+| フレームワーク | Ruby on Rails (7.2.3.1) |
+| 言語 | Ruby (3.3.11) |
+| データベース | PostgreSQL |
+| デプロイ先 | Render |
+| 認証 | Sorcery (0.18.0), OmniAuth (Google) |
+| 画像アップロード | CarrierWave (3.0), fog-aws |
+| 検索機能 | Ransack |
+| ページネーション | kaminari |
+| メール送信 | Resend |
+| フロントエンド | Turbo, Stimulus |
 <br>
+<br>
+
 ###  ER図  
 https://app.diagrams.net/#G1XPJWqstFfw4ZONJrgP-tTCLRwRkd3y_N#%7B%22pageId%22%3A%22ZTJpqxGzQrN0hIwOVIRv%22%7D  
 
