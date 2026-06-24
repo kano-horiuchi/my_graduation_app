@@ -107,7 +107,7 @@
 | 検索機能 | Ransack |
 | ページネーション | kaminari |
 | メール送信 | Resend |
-| フロントエンド | Turbo, Stimulus |
+| フロントエンド | Bootstrap,Hotwire（Turbo/Stimulus） |
 <br>
 <br>
 
