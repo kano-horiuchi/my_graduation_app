@@ -16,4 +16,16 @@ RSpec.describe "PasswordResets", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "POST /create" do
+    let(:user) { create(:user) }
+
+    it "メール送信メソッドが呼び出されること" do
+      mail_double = instance_double(ActionMailer::MessageDelivery)
+      expect(UserMailer).to receive(:reset_password_email).with(anything).and_return(mail_double)
+      expect(mail_double).to receive(:deliver_now)
+      post password_resets_path, params: { email: user.email }
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end
